@@ -16,7 +16,7 @@ datasource db {
 model Restaurant {
   id             String         @id @default(uuid())
   name           String
-  slug           String
+  slug           String         @unique
   description    String
   products       Product[]
   avatarImageUrl String
@@ -83,7 +83,7 @@ enum OrderStatus {
 }
 
 enum ConsumptionMethod {
-  DELIVERY
   TAKEAWAY
   IN_LOCAL
+  DINE_IN
 }
